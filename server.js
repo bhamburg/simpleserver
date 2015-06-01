@@ -1,6 +1,23 @@
+// Require Modules
 var http = require('http');
-http.createServer(function (req, res) {
-  res.writeHead(200, {'Content-Type': 'text/plain'});
-  res.end('Hello World\n');
-}).listen(1337, '127.0.0.1');
-console.log('Server running at http://127.0.0.1:1337/');
+var url = require('url');
+var path = require('path');
+var fs = require('fs')
+
+// Object of Mime Types
+var mimeTypes = {
+    "html" : "text/html",
+    "jpeg" : "image/jpeg",
+    "jpg" : "image/jpeg",
+    "png" : "image/png",
+    "js" : "text/javascript",
+    "css" : "text/css"
+};
+
+// Create Server
+http.createServer(function(){
+    var uri = url.parse(req.url).pathname;
+    var filename = path.join(process.cwd(),unescape(uri))
+    console.log();
+});
+
